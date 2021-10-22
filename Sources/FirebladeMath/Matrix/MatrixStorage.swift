@@ -5,7 +5,7 @@
 //  Created by Christian Treffs on 05.09.19.
 //
 
-public protocol Storage4x4Protocol: RandomAccessCollection, MutableCollection, RangeReplaceableCollection, Equatable {
+public protocol Storage4x4Protocol: RandomAccessCollection, MutableCollection, Equatable {
     associatedtype Value: StorageScalar
     // associatedtype _Storage3x3: Storage3x3Protocol where _Storage3x3.Value == Value
     typealias Column = SIMD4<Value>
@@ -27,7 +27,7 @@ extension Storage4x4Protocol where Element == Value, Index == Int {
     public func index(after i: Int) -> Int { i + 1 }
 }
 
-public protocol Storage3x3Protocol: RandomAccessCollection, MutableCollection, RangeReplaceableCollection, Equatable {
+public protocol Storage3x3Protocol: RandomAccessCollection, MutableCollection, Equatable {
     associatedtype Value: StorageScalar
     // associatedtype _Storage4x4: Storage4x4Protocol where _Storage4x4.Value == Value
     typealias Column = SIMD3<Value>
